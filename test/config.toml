@@ -1,0 +1,153 @@
+[[sinner]]
+name = "Yi Sang"
+path = "yi_sang"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
+    { name = "Effl. EGO:: Spicebush", rarity = 3, image = "spicebush.png" },
+    { name = "Molar Office Fixer", rarity = 2, image = "molar.png" },
+    { name = "Seven Association", rarity = 2, image = "seven.png" },
+    { name = "Pequod First Mate", rarity = 2, image = "pequod.png" },
+    { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
+]
+
+[[sinner]]
+name = "Faust"
+path = "faust"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "L. Corp Remnant", rarity = 2, image = "lob_remnant.png" },
+    { name = "L. Corp EGO:: Regret", rarity = 3, image = "lob_ego_regret.png" },
+    { name = "Seven Association", rarity = 3, image = "seven.png" },
+    { name = "The One Who Grips", rarity = 3, image = "grip.png" },
+    { name = "W. Corp Cl. Agent", rarity = 2, image = "w_corp.png" },
+    { name = "Zwei Association", rarity = 2, image = "zwei.png" },
+]
+
+[[sinner]]
+name = "Don quixote"
+path = "don_quixote"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Cinq Association", rarity = 3, image = "cinq.png" },
+    { name = "Shi Association", rarity = 2, image = "shi.png" },
+    { name = "The Middle Little Sister", rarity = 3, image = "middle.png" },
+    { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
+    { name = "N. Corp Mittelhammer", rarity = 2, image = "n_corp.png" },
+]
+
+[[sinner]]
+name = "Ryoshu"
+path = "ryoshu"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Kurokumo Wakashu", rarity = 3, image = "kurokumo.png" },
+    { name = "LCCB A. Manager", rarity = 2, image = "lccb.png" },
+    { name = "R.B. Chef de Cuisine", rarity = 3, image = "rb_chef.png" },
+    { name = "Seven Association", rarity = 2, image = "seven.png" },
+    { name = "W. Corp Cl. Agent", rarity = 2, image = "w_corp.png" },
+]
+
+[[sinner]]
+name = "Meursault"
+path = "meursault"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Liu Association", rarity = 2, image = "liu.png" },
+    { name = "N. Corp Grobhammer", rarity = 3, image = "n_corp.png" },
+    { name = "R. Corp Rhino", rarity = 3, image = "r_corp.png" },
+    { name = "Rosespanner Workshop", rarity = 2, image = "rosespanner.png" },
+    { name = "The Middle Little Brother", rarity = 2, image = "middle.png" },
+    { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
+]
+
+[[sinner]]
+name = "Hong Lu"
+path = "hong_lu"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Hook Office", rarity = 2, image = "hook.png" },
+    { name = "K. Corp Staff", rarity = 3, image = "k_corp.png" },
+    { name = "Kurokumo Wakashu", rarity = 2, image = "kurokumo.png" },
+    { name = "Liu Association", rarity = 2, image = "liu.png" },
+    { name = "Tingtang Gangleader", rarity = 3, image = "tingtang.png" },
+    { name = "W. Corp Cl. Agent", rarity = 2, image = "w_corp.png" },
+]
+
+[[sinner]]
+name = "Heathcliff"
+path = "heathcliff"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "L. Corp EGO:: Sunshower", rarity = 3, image = "sunshower.png" },
+    { name = "N. Corp Kleinhammer", rarity = 2, image = "n_corp.png" },
+    { name = "R. Corp Rabbit", rarity = 3, image = "r_corp.png" },
+    { name = "Seven Association", rarity = 2, image = "seven.png" },
+    { name = "Shi Association", rarity = 2, image = "shi.png" },
+    { name = "The Pequod Harpooner", rarity = 3, image = "pequod.png" },
+]
+
+[[sinner]]
+name = "Ishmael"
+path = "ishmael"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "LCCB A. Manager", rarity = 2, image = "lccb.png" },
+    { name = "Liu Association", rarity = 3, image = "liu.png" },
+    { name = "L. Corp EGO:: Sloshing", rarity = 2, image = "sloshing.png" },
+    { name = "Molar Boatworks Fixer", rarity = 3, image = "molar_boatworks.png" },
+    { name = "R. Corp Reindeer", rarity = 3, image = "r_corp.png" },
+    { name = "Shi Association", rarity = 2, image = "shi.png" },
+]
+
+[[sinner]]
+name = "Rodion"
+path = "rodion"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Dieci Association", rarity = 3, image = "dieci.png" },
+    { name = "Kurokumo Henchwoman", rarity = 3, image = "kurokumo.png" },
+    { name = "LCCB A. Manager", rarity = 2, image = "lccb.png" },
+    { name = "N. Corp Mittelhammer", rarity = 2, image = "n_corp.png" },
+    { name = "Rosespanner Workshop", rarity = 3, image = "rosespanner.png" },
+    { name = "Zwei Association", rarity = 2, image = "zwei.png" },
+]
+
+[[sinner]]
+name = "Sinclair"
+path = "sinclair"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
+    { name = "Cinq Association", rarity = 3, image = "cinq.png" },
+    { name = "Jefe de Los Mariachi", rarity = 2, image = "mariachi.png" },
+    { name = "L. Corp EGO:: Red Sheet", rarity = 2, image = "red_sheet.png" },
+    { name = "Molar Boatworks Fixer", rarity = 2, image = "molar_boatworks.png" },
+    { name = "The One Who Shall Grip", rarity = 3, image = "grip.png" },
+    { name = "Zwei Association", rarity = 2, image = "zwei.png" },
+]
+
+[[sinner]]
+name = "Outis"
+path = "outis"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Blade Lineage Cutthroat", rarity = 2, image = "blade_lineage.png" },
+    { name = "Cinq Association", rarity = 2, image = "cinq.png" },
+    { name = "G. Corp Head Manager", rarity = 2, image = "g_corp.png" },
+    { name = "Molar Office Fixer", rarity = 3, image = "molar.png" },
+    { name = "Seven Association", rarity = 3, image = "seven.png" },
+]
+
+[[sinner]]
+name = "Gregor"
+path = "gregor"
+id = [
+    { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "G. Corp C. Manager", rarity = 3, image = "g_corp.png" },
+    { name = "Liu Association", rarity = 2, image = "liu.png" },
+    { name = "R.B. Sous-chef", rarity = 2, image = "rb_chef.png" },
+    { name = "Rosespanner Workshop", rarity = 2, image = "rosespanner.png" },
+    { name = "Twinhook Pirates F. Mate", rarity = 3, image = "twinhook.png" },
+    { name = "Zwei Association", rarity = 3, image = "zwei.png" },
+]
