@@ -1,5 +1,9 @@
 # Limbus Image
 
+<p align="center">
+    <img src="./img/limbus-image-image.png" alt="" height="320" />
+</p>
+
 A CLI image generator to make Tier List style images of all the sinners. It works based on a
 `config.toml` file that contains sinners along with each of their IDs.
 
