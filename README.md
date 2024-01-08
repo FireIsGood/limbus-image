@@ -7,26 +7,27 @@
 > This odyssey had its purpose.
 
 A CLI image generator to make Tier List style images of all the sinners. It
-works based on a `config.toml` file that contains sinners along with each of
-their IDs.
+works relative to a `config.toml` file with folders for the assets (overlays),
+inputs (sinner images in sub-directories), and outputs (sinner images but in a
+flat directory).
 
 The images are stored in a specific directory structure as follows:
 
 ```text
 /
 ├── asset/
-│   ├── gradient_small.png
-│   ├── gradient_large.png
-│   ├── 0.png
-│   ├── 00.png
-│   └── 000.png
+│   ├── gradient_small.png               # Overlay for 1 line of upper text
+│   ├── gradient_large.png               # Overlay for 2 lines of upper text
+│   ├── 0.png                            # 0 id border
+│   ├── 00.png                           # 00 id border
+│   └── 000.png                          # 000 id border
 ├── input/
 │   └── [sinner_name]/
 │       └── id/
-│           └── [id name].png
+│           └── [id name].png            # Identity name matching the config
 ├── output/
 │   └── id/
-│       └── [sinner name]_[id name].png
+│       └── [sinner name]_[id name].png  # Output images
 └── config.toml
 ```
 
