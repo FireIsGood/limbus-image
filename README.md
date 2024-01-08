@@ -89,15 +89,18 @@ path = "yi_sang" # Path of folder
 id = [
     { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
     { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
+    #                                           ^ Image file name
+    #                               ^ Rarity (1 to 3)
+    # ^ Sinner name (some are truncated to not go over 2 lines)
     ...
 ]
 ...
 # Repeat for every sinner
 ```
 
-The images are placed in relative directories to the config file. Honestly it's
-not helpful to explain through text, so just check out the `/test` directory and
-go from there.
+The images are placed in relative directories to the config file. The specific
+locations are explained at the top, and but you can check out the `/test`
+directory to see what I have tested with.
 
 After updating the `cargo.toml`, run the binary with a path to the config file.
 Input and output directories are inferred based on the folder containing the
