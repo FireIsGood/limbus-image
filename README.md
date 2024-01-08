@@ -4,6 +4,8 @@
     <img src="./img/limbus-image-image.png" alt="" height="320" />
 </p>
 
+> This odyssey had its purpose.
+
 A CLI image generator to make Tier List style images of all the sinners. It works based on a
 `config.toml` file that contains sinners along with each of their IDs.
 
@@ -50,14 +52,20 @@ directories are inferred based on the folder containing the config.
 
 If no location is given, the config will try to target `./config.toml`.
 
+Assuming you just compiled the program and haven't installed it:
+
 ```bash
+# Run on `./config.toml` (if it exists)
+./target/release/limbus-image
+
 # Run on a specific config file
-limbus-image ./test/config.toml
+./target/release/limbus-image ./test/config.toml
 ```
 
 ## Limitations
 
-Images are hard coded at 600 by 600 pixels due to the libraries used.
+Images are hard coded at 600 by 600 pixels due to the libraries used. The provided images are at a
+lower resolution, though that is because they were taken from a specific game asset.
 
 ## Contributing
 
