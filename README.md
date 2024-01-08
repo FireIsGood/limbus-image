@@ -14,17 +14,16 @@ The images are stored in a specific directory structure as follows:
 
 ```text
 /
+├── asset/
+│   ├── gradient_small.png
+│   ├── gradient_large.png
+│   ├── 0.png
+│   ├── 00.png
+│   └── 000.png
 ├── input/
-│   ├── assets/
-│   │   ├── gradient_small.png
-│   │   ├── gradient_large.png
-│   │   ├── 0.png
-│   │   ├── 00.png
-│   │   └── 000.png
-│   └── sinners/
-│       └── [sinner_name]/
-│           └── id/
-│               └── [id name].png
+│   └── [sinner_name]/
+│       └── id/
+│           └── [id name].png
 ├── output/
 │   └── id/
 │       └── [sinner name]_[id name].png

@@ -60,14 +60,14 @@ fn generate_ids(
 
 /// Path to the root input sinner folder
 fn root_sinners_folder(config: &Config) -> String {
-    format!("{}/input/sinners/", config.relative_root)
+    format!("{}/input/", config.relative_root)
 }
 
 /// Path to the root input assets folder
 ///
 /// Assets must use the specific names as used in the Images function
 fn asset_folder(config: &Config) -> String {
-    format!("{}/input/assets/", config.relative_root)
+    format!("{}/asset/", config.relative_root)
 }
 
 /// Path to the sinner's folder from the input
