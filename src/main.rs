@@ -16,6 +16,7 @@ fn main() -> anyhow::Result<()> {
 
     let sinners_generated = iterate_sinners(&config_file)?;
 
-    println!("Generated {sinners_generated} image(s)!");
+    let image_count_suffix = if sinners_generated == 1 { "" } else { "s" };
+    println!("Generated {sinners_generated} image{image_count_suffix}!");
     Ok(())
 }
