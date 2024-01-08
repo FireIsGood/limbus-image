@@ -45,7 +45,7 @@ id = [
     { name = "LCCB A. Manager", rarity = 2, image = "lccb.png" },
     { name = "R.B. Chef de Cuisine", rarity = 3, image = "rb_chef.png" },
     { name = "Seven Association", rarity = 2, image = "seven.png" },
-    { name = "W. Corp Cl. Agent", rarity = 2, image = "w_corp.png" },
+    { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
 ]
 
 [[sinner]]
