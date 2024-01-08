@@ -49,7 +49,8 @@ To build from the source, clone the repo and run the cargo command:
 cargo build --release
 ```
 
-The binary will be created at `./target/release/limbus-image`.
+The binary will be created at `./target/release/limbus-image`. Use this path
+when executing in **Usage** instead of `limbus-image`.
 
 ## Usage
 
@@ -83,10 +84,10 @@ Assuming you just compiled the program and haven't installed it:
 
 ```bash
 # Run on `./config.toml` (if it exists)
-./target/release/limbus-image
+limbus-image
 
 # Run on a specific config file
-./target/release/limbus-image ./test/config.toml
+limbus-image ./test/config.toml
 ```
 
 ## Limitations
