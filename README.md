@@ -127,9 +127,10 @@ limbus-image ./test/config.toml
 
 ## Limitations
 
-Images are hard coded at 600 by 600 pixels due to the libraries used. The
-provided images are at a lower resolution, though that is because they were
-taken from a specific game asset.
+Images are hard coded to be 600 by 600 as font sizes are kind of strange and I
+don't want to deal with them. I don't have high resolution overlays and the
+provided images are at a lower resolution so it's not very useful to go past
+600 pixels.
 
 ## Contributing
 
