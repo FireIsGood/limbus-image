@@ -1,7 +1,24 @@
+//! Image generation and overlaying
+
+/// Image size
+///
+/// This is fixed at 600 as the text size is set as constants
 const IMAGE_SIZE: i32 = 600;
+
+/// Text color
+///
+/// This is set across all images and is a yellow similar to in-game text
 const TEXT_COLOR: image::Rgba<u8> = image::Rgba::<u8>([255, 217, 0, 255]);
+
+/// Drop shadow color
+///
+/// This is just to add more contrast. The text writing library doesn't have the ability
+/// to add shadows natively, so this is just another layer of text slightly offset
 const SHADOW_COLOR: image::Rgba<u8> = image::Rgba::<u8>([30, 30, 30, 255]);
 
+/// Create an image of the sinner
+///
+/// Takes the image
 pub fn create_image(
     input_image_path: &str,
     output_image_path: &str,
@@ -83,6 +100,7 @@ pub fn create_image(
     Ok(())
 }
 
+/// Converts line count to a string of the gradient asset to overlay
 fn line_count_to_overlay(lines: i32) -> String {
     match lines {
         1 => "gradient_small.png",
@@ -92,6 +110,7 @@ fn line_count_to_overlay(lines: i32) -> String {
     .into()
 }
 
+/// Converts rarity to a string of the border asset to overlay
 fn rarity_to_overlay(rarity: u8) -> String {
     match rarity {
         1 => "0.png",
@@ -102,6 +121,7 @@ fn rarity_to_overlay(rarity: u8) -> String {
     .into()
 }
 
+/// Writes wrapped text on to the image
 fn write_text(
     text: &str,
     wrapped_width: i32,
@@ -138,6 +158,9 @@ fn write_text(
     }
 }
 
+/// Resize an image to the image size
+///
+/// Used to align everything correctly.
 fn resize_image(image: &image::DynamicImage) -> image::DynamicImage {
     image.resize(
         IMAGE_SIZE as u32,

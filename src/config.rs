@@ -1,3 +1,4 @@
+//! Config file structs
 use serde::Deserialize;
 
 /// Configuration

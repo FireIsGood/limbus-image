@@ -1,3 +1,7 @@
+//! Limbus company CLI tier list image generator
+//!
+//! It generates files based on a TOML config file you direct it to.
+
 mod args;
 mod config;
 mod files;

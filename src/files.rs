@@ -1,5 +1,10 @@
+//! File accessing and general driver stuff
 use crate::config::{Config, Sinner};
 
+/// Iterates each sinner and each identity for all the work
+///
+/// Images are only created if they do not already exist in the output directory.
+/// Errors are bubbled up through a result. Returns the number generated.
 pub fn iterate_sinners(config: &Config) -> anyhow::Result<i32> {
     let mut sinners_generated = 0;
     let sinner_list = &config.data.sinner;

@@ -1,3 +1,4 @@
+//! CLI Argument parsing logic
 use crate::config::{Config, SinnerData};
 use clap::Parser;
 use std::fs;
