@@ -105,7 +105,7 @@ fn line_count_to_overlay(lines: i32) -> String {
     match lines {
         1 => "gradient_small.png",
         2 => "gradient_large.png",
-        _ => panic!("Up to 2 lines of text should exist"),
+        _ => panic!("The name wrapped to 3 lines which is not supported. Try shortening the name!"),
     }
     .into()
 }
@@ -116,7 +116,7 @@ fn rarity_to_overlay(rarity: u8) -> String {
         1 => "0.png",
         2 => "00.png",
         3 => "000.png",
-        _ => panic!("Rarity must be 1 to 3"),
+        _ => panic!("Rarity can only be 1 to 3!"),
     }
     .into()
 }
