@@ -70,5 +70,5 @@ fn asset_folder(config: &Config) -> String {
 ///
 /// Outputs are made in a flat directory as opposed to the inputs to make copying easier.
 fn output_folder(config: &Config) -> String {
-    format!("{}/output/sinners/", config.relative_root)
+    format!("{}/output/", config.relative_root)
 }

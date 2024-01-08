@@ -10,6 +10,31 @@ A CLI image generator to make Tier List style images of all the sinners. It
 works based on a `config.toml` file that contains sinners along with each of
 their IDs.
 
+The images are stored in a specific directory structure as follows:
+
+```text
+/
+├── input/
+│   ├── assets/
+│   │   ├── gradient_small.png
+│   │   ├── gradient_large.png
+│   │   ├── 0.png
+│   │   ├── 00.png
+│   │   └── 000.png
+│   └── sinners/
+│       └── [sinner_name]/
+│           └── id/
+│               └── [id name].png
+├── output/
+│   └── [sinner name]_[id name].png
+└── config.toml
+```
+
+Notably, sinners have an `id/` folder underneath in the case that this project
+is expanded to include EGOs. The output is flat to make copying easier as all of
+the images are prefixed by the sinner and therefore do not need separate
+folders.
+
 This was made because it seems the tier list maker website hasn't been updated
 in a while.
 
