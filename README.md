@@ -24,7 +24,7 @@ The images are stored in a specific directory structure as follows:
 ├── input/
 │   └── [sinner_name]/
 │       └── id/
-│           └── [id name].png            # Identity name matching the config
+│           └── [id_name].png            # Identity name matching the config
 ├── output/
 │   └── id/
 │       └── [sinner name]_[id name].png  # Output images
