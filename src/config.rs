@@ -4,9 +4,7 @@ use serde::Deserialize;
 #[derive(Deserialize, Debug)]
 pub struct Config {
     pub data: SinnerData,
-    pub input_sinner_folder: String,
-    pub output_sinner_folder: String,
-    pub asset_folder: String,
+    pub relative_root: String,
 }
 
 /// Each sinner

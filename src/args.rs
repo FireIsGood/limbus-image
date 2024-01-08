@@ -14,22 +14,23 @@ pub struct Cli {
 pub fn get_config() -> anyhow::Result<Config> {
     // Get cli args
     let cli = Cli::parse();
-    let config_path = PathBuf::from(cli.config.unwrap_or("./config.toml".into()));
+    let config_path = PathBuf::from(cli.config.unwrap_or_else(|| "./config.toml".into()));
 
     // Get the relative root of the sinner folder file system
-    let relative_root = config_path.as_path().parent().unwrap().to_str().unwrap();
-    let input_sinner_folder = format!("{}/input/sinners/", relative_root);
-    let output_sinner_folder = format!("{}/output/sinners/", relative_root);
-    let asset_folder = format!("{}/input/assets/", relative_root);
+    let relative_root: String = config_path
+        .as_path()
+        .parent()
+        .expect("parent exists")
+        .to_str()
+        .expect("folder name usable as string")
+        .into();
 
     // Read the given config file
     let file_content = fs::read_to_string(config_path)?;
     let data: SinnerData = toml::from_str(&file_content)?;
     let config = Config {
         data,
-        input_sinner_folder,
-        output_sinner_folder,
-        asset_folder,
+        relative_root,
     };
 
     Ok(config)
