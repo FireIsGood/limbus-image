@@ -6,17 +6,42 @@
 
 > This odyssey had its purpose.
 
-A CLI image generator to make Tier List style images of all the sinners. It works based on a
-`config.toml` file that contains sinners along with each of their IDs.
+A CLI image generator to make Tier List style images of all the sinners. It
+works based on a `config.toml` file that contains sinners along with each of
+their IDs.
 
-This was made because it seems the tier list maker website hasn't been updated in a while.
+This was made because it seems the tier list maker website hasn't been updated
+in a while.
 
-If you see any errors, that's totally on me. I wrote this in like 8 hours when I should have been
-sleeping. Make an issue or pull request if it bothers you.
+If you see any errors, that's totally on me. I wrote this in like 8 hours when I
+should have been sleeping. Make an issue or pull request if it bothers you.
 
 ## Installation
 
-I can't easily compile to Windows so you'll have to compile this from the source. Sorry!
+You can either install it via `cargo` or compile from the source.
+
+### Installing from Cargo
+
+To install it via Cargo from [crates.io](https://crates.io/), first ensure you
+have Cargo installed.
+
+```bash
+cargo -V
+```
+
+If you need to install Cargo, look up a guide on your favorite search engine. If
+it's installed, just run the installation command.
+
+```bash
+cargo install
+```
+
+This is basically the same as compiling from the source, but more convenient.
+
+The binary will be usable as `limbus-image` if Rust is correctly configured in
+your path. Look it up if you have trouble or something.
+
+### Building From the Source
 
 To build from the source, clone the repo and run the cargo command:
 
@@ -44,11 +69,13 @@ id = [
 # Repeat for every sinner
 ```
 
-The images are placed in relative directories to the config file. Honestly it's not helpful to
-explain through text, so just check out the `/test` directory and go from there.
+The images are placed in relative directories to the config file. Honestly it's
+not helpful to explain through text, so just check out the `/test` directory and
+go from there.
 
-After updating the `cargo.toml`, run the binary with a path to the config file. Input and output
-directories are inferred based on the folder containing the config.
+After updating the `cargo.toml`, run the binary with a path to the config file.
+Input and output directories are inferred based on the folder containing the
+config.
 
 If no location is given, the config will try to target `./config.toml`.
 
@@ -64,19 +91,22 @@ Assuming you just compiled the program and haven't installed it:
 
 ## Limitations
 
-Images are hard coded at 600 by 600 pixels due to the libraries used. The provided images are at a
-lower resolution, though that is because they were taken from a specific game asset.
+Images are hard coded at 600 by 600 pixels due to the libraries used. The
+provided images are at a lower resolution, though that is because they were
+taken from a specific game asset.
 
 ## Contributing
 
-Feel free to add issues or make pull requests regarding new IDs. Remember that the binary needs to
-be run on the config file in `./test/config.toml` to update the repository's images.
+Feel free to add issues or make pull requests regarding new IDs. Remember that
+the binary needs to be run on the config file in `./test/config.toml` to update
+the repository's images.
 
 ## Disclaimer
 
-This project is unaffiliated with Limbus Company's creators/distributors. Images have been taken
-from the **Organized Limbus Company Files** from the [ProjectMoon Community Hub](https://discord.gg/pmooncommunityfanhub)
-Discord server.
+This project is unaffiliated with Limbus Company's creators/distributors. Images
+have been taken from the **Organized Limbus Company Files** from the
+[ProjectMoon Community Hub](https://discord.gg/pmooncommunityfanhub)Discord
+server.
 
 ## License
 
