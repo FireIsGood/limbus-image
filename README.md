@@ -27,7 +27,7 @@ The images are stored in a specific directory structure as follows:
 │           └── [id_name].png            # Identity name matching the config
 ├── output/
 │   └── id/
-│       └── [sinner name]_[id name].png  # Output images
+│       └── [sinner_name]_[id_name].png  # Output images
 └── config.toml
 ```
 
