@@ -26,14 +26,14 @@ The images are stored in a specific directory structure as follows:
 │           └── id/
 │               └── [id name].png
 ├── output/
-│   └── [sinner name]_[id name].png
+│   └── id/
+│       └── [sinner name]_[id name].png
 └── config.toml
 ```
 
-Notably, sinners have an `id/` folder underneath in the case that this project
-is expanded to include EGOs. The output is flat to make copying easier as all of
-the images are prefixed by the sinner and therefore do not need separate
-folders.
+Notably, sinners have an `id/` folder in the case that this project is expanded
+to include EGOs. The output is flat to make copying easier as all of the images
+are prefixed by the sinner and therefore do not need separate folders.
 
 This was made because it seems the tier list maker website hasn't been updated
 in a while.

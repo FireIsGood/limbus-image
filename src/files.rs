@@ -12,46 +12,50 @@ pub fn iterate_sinners(config: &Config) -> anyhow::Result<i32> {
     for sinner in sinner_list {
         let input_image_folder = sinner_folder(config, sinner);
 
-        for id in &sinner.id {
-            // Inputs are scoped as `input/sinners/[sinner]/[id]/*`
-            let input_id_image = format!("{}/id/{}", &input_image_folder, id.image);
-            // Outputs are scoped as `output/sinners/*`
-            let output_id_image = format!("{}{}_{}", output_folder(config), sinner.path, id.image);
-
-            let sinner_already_exists = std::path::Path::new(&output_id_image).exists();
-            if sinner_already_exists {
-                continue;
-            };
-
-            // Actual image stuff
-            println!("Creating {} id: {}", &sinner.name, &id.name);
-
-            // Create the image, returning any errors
-            crate::images::create_image(
-                &input_id_image,
-                &output_id_image,
-                &asset_folder(config),
-                id.rarity,
-                &id.name,
-                &sinner.name,
-            )
-            .map_err(|e| {
-                eprintln!("\nThe image at {input_id_image} was not found.");
-                eprintln!("Check if the file exists!\n");
-                e
-            })?;
-
-            sinners_generated += 1;
-        }
+        generate_ids(sinner, input_image_folder, config, &mut sinners_generated)?;
     }
 
     Ok(sinners_generated)
 }
 
-/// Path to the sinner's folder from the input
-fn sinner_folder(config: &Config, sinner: &Sinner) -> String {
-    let root_sinners_folder = root_sinners_folder(config);
-    format!("{}{}", root_sinners_folder, sinner.path)
+/// Generate images for every ID of a sinner
+fn generate_ids(
+    sinner: &Sinner,
+    input_image_folder: String,
+    config: &Config,
+    sinners_generated: &mut i32,
+) -> anyhow::Result<()> {
+    for id in &sinner.id {
+        let input_id_image = input_sinner_id(&input_image_folder, id);
+        let output_id_image = output_sinner_id(config, sinner, id);
+
+        let sinner_already_exists = std::path::Path::new(&output_id_image).exists();
+        if sinner_already_exists {
+            continue;
+        };
+
+        // Actual image stuff
+        println!("Creating {} id: {}", &sinner.name, &id.name);
+
+        // Create the image, returning any errors
+        crate::images::create_image(
+            &input_id_image,
+            &output_id_image,
+            &asset_folder(config),
+            id.rarity,
+            &id.name,
+            &sinner.name,
+        )
+        .map_err(|e| {
+            eprintln!("\nThe image at {input_id_image} was not found.");
+            eprintln!("Check if the file exists!\n");
+            e
+        })?;
+
+        *sinners_generated += 1;
+    }
+
+    Ok(())
 }
 
 /// Path to the root input sinner folder
@@ -66,9 +70,27 @@ fn asset_folder(config: &Config) -> String {
     format!("{}/input/assets/", config.relative_root)
 }
 
+/// Path to the sinner's folder from the input
+fn sinner_folder(config: &Config, sinner: &Sinner) -> String {
+    let root_sinners_folder = root_sinners_folder(config);
+    format!("{}{}", root_sinners_folder, sinner.path)
+}
+
+/// Path to the sinner's ID input image
+fn input_sinner_id(input_image_folder: &String, id: &crate::config::Identity) -> String {
+    // Inputs are scoped as `input/sinners/[sinner]/[id]/*`
+    format!("{}/id/{}", &input_image_folder, id.image)
+}
+
 /// Path to the output folder
 ///
 /// Outputs are made in a flat directory as opposed to the inputs to make copying easier.
 fn output_folder(config: &Config) -> String {
     format!("{}/output/", config.relative_root)
+}
+
+/// Path to the sinner's ID output image
+fn output_sinner_id(config: &Config, sinner: &Sinner, id: &crate::config::Identity) -> String {
+    // Outputs are scoped as `output/id/*`
+    format!("{}id/{}_{}", output_folder(config), sinner.path, id.image)
 }
