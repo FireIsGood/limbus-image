@@ -48,14 +48,14 @@ You can either install it via `cargo` or compile from the source.
 ### Installing from Cargo
 
 To install it via Cargo from [crates.io](https://crates.io/), first ensure you
-have Cargo installed.
+have Cargo installed. You can check with the version command:
 
 ```bash
 cargo -V
 ```
 
-If you need to install Cargo, look up a guide on your favorite search engine. If
-it's installed, just run the installation command.
+If you need to install Cargo, look up a guide on your favorite search engine.
+Once it's installed, just run the installation command:
 
 ```bash
 cargo install
