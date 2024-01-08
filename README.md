@@ -131,7 +131,7 @@ the repository's images.
 
 This project is unaffiliated with Limbus Company's creators/distributors. Images
 have been taken from the **Organized Limbus Company Files** from the
-[ProjectMoon Community Hub](https://discord.gg/pmooncommunityfanhub)Discord
+[ProjectMoon Community Hub](https://discord.gg/pmooncommunityfanhub) Discord
 server.
 
 ## License
