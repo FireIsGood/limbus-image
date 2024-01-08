@@ -45,7 +45,7 @@ should have been sleeping. Make an issue or pull request if it bothers you.
 
 You can either install it via `cargo` or compile from the source.
 
-### Installing from Cargo
+### Installing from Cargo (Recommended)
 
 To install it via Cargo from [crates.io](https://crates.io/), first ensure you
 have Cargo installed. You can check with the version command:
