@@ -35,6 +35,13 @@ Notably, sinners have an `id/` folder in the case that this project is expanded
 to include EGOs. The output is flat to make copying easier as all of the images
 are prefixed by the sinner and therefore do not need separate folders.
 
+Images will be generated to have a different border based on their rarity and a
+gradient behind the text is expanded for names with more than one line.
+
+<p align="center">
+    <img src="./img/limbus-image-preview-smaller.png" alt="" />
+</p>
+
 This was made because it seems the tier list maker website hasn't been updated
 in a while.
 
