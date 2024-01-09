@@ -9,10 +9,16 @@ pub fn iterate_sinners(config: &Config) -> anyhow::Result<i32> {
     let mut sinners_generated = 0;
     let sinner_list = &config.data.sinner;
 
-    for sinner in sinner_list {
+    for (index, sinner) in sinner_list.iter().enumerate() {
         let input_image_folder = sinner_folder(config, sinner);
 
-        generate_ids(sinner, input_image_folder, config, &mut sinners_generated)?;
+        generate_ids(
+            sinner,
+            index,
+            input_image_folder,
+            config,
+            &mut sinners_generated,
+        )?;
     }
 
     Ok(sinners_generated)
@@ -21,13 +27,14 @@ pub fn iterate_sinners(config: &Config) -> anyhow::Result<i32> {
 /// Generate images for every ID of a sinner
 fn generate_ids(
     sinner: &Sinner,
+    sinner_index: usize,
     input_image_folder: String,
     config: &Config,
     sinners_generated: &mut i32,
 ) -> anyhow::Result<()> {
-    for id in &sinner.id {
+    for (id_index, id) in sinner.id.iter().enumerate() {
         let input_id_image = input_sinner_id(&input_image_folder, id);
-        let output_id_image = output_sinner_id(config, sinner, id);
+        let output_id_image = output_sinner_id(config, sinner, sinner_index, id, id_index);
 
         let sinner_already_exists = std::path::Path::new(&output_id_image).exists();
         if sinner_already_exists {
@@ -35,7 +42,7 @@ fn generate_ids(
         };
 
         // Actual image stuff
-        println!("Creating {} id: {}", &sinner.name, &id.name);
+        println!("Creating {} id #{}: {}", &sinner.name, id_index, &id.name);
 
         // Create the image, returning any errors
         crate::images::create_image(
@@ -90,7 +97,20 @@ fn output_folder(config: &Config) -> String {
 }
 
 /// Path to the sinner's ID output image
-fn output_sinner_id(config: &Config, sinner: &Sinner, id: &crate::config::Identity) -> String {
+fn output_sinner_id(
+    config: &Config,
+    sinner: &Sinner,
+    sinner_index: usize,
+    id: &crate::config::Identity,
+    id_index: usize,
+) -> String {
     // Outputs are scoped as `output/id/*`
-    format!("{}id/{}_{}", output_folder(config), sinner.path, id.image)
+    format!(
+        "{}id/{}_{}_{}_{}",
+        output_folder(config),
+        sinner_index + 1,
+        sinner.path,
+        id_index + 1,
+        id.image
+    )
 }

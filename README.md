@@ -11,7 +11,8 @@ works relative to a `config.toml` file with folders for the assets (overlays),
 inputs (sinner images in sub-directories), and outputs (sinner images but in a
 flat directory).
 
-The images are stored in a specific directory structure as follows:
+The images are stored in a specific directory structure relative to the TOML
+file as follows:
 
 ```text
 /
@@ -90,11 +91,13 @@ The binary requires a configuration [TOML](https://toml.io/en/) file in the
 following format:
 
 ```toml
+# Yi Sang is the first sinner by number, so he is first in the file
 [[sinner]]
 name = "Yi Sang" # Sinner name (for bottom text)
 path = "yi_sang" # Path of folder
 id = [
     { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
+    { name = "Seven Association", rarity = 2, image = "seven.png" },
     { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
     #                                           ^ Image file name
     #                               ^ Rarity (1 to 3)
@@ -104,6 +107,9 @@ id = [
 ...
 # Repeat for every sinner
 ```
+
+The sinners and IDs should be in the order you wish the images to appear as the
+outputted files have numbers to automatically order them.
 
 The images are placed in relative directories to the config file. The specific
 locations are explained at the top, and but you can check out the `/test`
