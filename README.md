@@ -11,6 +11,8 @@ works relative to a `config.toml` file with folders for the assets (overlays),
 inputs (sinner images in sub-directories), and outputs (sinner images but in a
 flat directory).
 
+If you're just here for a tier list website link, check out the [Tier Maker page](https://tiermaker.com/create/limbus-company-identities-16617387)
+
 The images are stored in a specific directory structure relative to the TOML
 file as follows:
 
