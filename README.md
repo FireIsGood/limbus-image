@@ -41,9 +41,10 @@ are prefixed by the sinner and therefore do not need separate folders.
 Images will be generated to have a different border based on their rarity and a
 gradient behind the text is expanded for names with more than one line.
 
-<p align="center">
+<div align="center">
     <img src="./img/limbus-image-preview-smaller.png" alt="" />
-</p>
+</div>
+<p align="center">Sinners of all rarities</p>
 
 This was made because it seems the tier list maker website hasn't been updated
 in a while.
@@ -89,11 +90,14 @@ when executing in **Usage** instead of `limbus-image`.
 
 ## Usage
 
+### Config file
+
 The binary requires a configuration [TOML](https://toml.io/en/) file in the
 following format:
 
 ```toml
 # Yi Sang is the first sinner by number, so he is first in the file
+
 [[sinner]]
 name = "Yi Sang" # Sinner name (for bottom text)
 path = "yi_sang" # Path of folder
@@ -111,11 +115,15 @@ id = [
 ```
 
 The sinners and IDs should be in the order you wish the images to appear as the
-outputted files have numbers to automatically order them.
+outputted files have numbers to automatically order them. In the example, I have
+ordered the sinners by sinner number and IDs by release order, rarity and then
+preference for tie breakers.
 
-The images are placed in relative directories to the config file. The specific
-locations are explained at the top, and but you can check out the `/test`
-directory to see what I have tested with.
+The images are placed in relative directories to the config file, not from where
+you execute the command from. The specific locations are explained at the top,
+and but you can check out the `/test` directory to see what I have tested with.
+
+### Generating the Images
 
 After updating the `cargo.toml`, run the binary with a path to the config file.
 Input and output directories are inferred based on the folder containing the
@@ -132,6 +140,23 @@ limbus-image
 # Run on a specific config file
 limbus-image ./test/config.toml
 ```
+
+The images will be generated flat in the `./output/id/` directory. They have
+numbers in the file names to be automatically sorted in sinner and then ID
+release order when sorted alphabetically. This is helpful for tools like Tier
+Maker which sort all uploaded images in alphabetical order automatically.
+
+The format is as follows:
+
+```text
+[sinner_number]_[sinner_name]_[id_number]_[id_name].png
+```
+
+They will look something like this:
+
+<p align="center">
+    <img src="./img/sinner-names-in-explorer.png" alt="sinner images in a file explorer"/>
+</p>
 
 ## Limitations
 
