@@ -34,6 +34,7 @@ id = [
     { name = "N. Corp Mittelhammer", rarity = 2, image = "n_corp.png" },
     { name = "Cinq Association", rarity = 3, image = "cinq.png" },
     { name = "The Middle Little Sister", rarity = 3, image = "middle.png" },
+    { name = "L. Corp EGO:: Lantern", rarity = 2, image = "lantern.png" },
 ]
 
 [[sinner]]
@@ -137,6 +138,7 @@ id = [
     { name = "Seven Association", rarity = 3, image = "seven.png" },
     { name = "Molar Office Fixer", rarity = 3, image = "molar.png" },
     { name = "Cinq Association", rarity = 2, image = "cinq.png" },
+    { name = "L. Corp EGO:: Magic Bullet", rarity = 3, image = "magic_bullet.png" },
 ]
 
 [[sinner]]
