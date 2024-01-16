@@ -149,7 +149,7 @@ Maker which sort all uploaded images in alphabetical order automatically.
 The format is as follows:
 
 ```text
-[sinner_number]_[sinner_name]_[id_number]_[id_name].png
+[sinner_number (padded to 2)]_[sinner_name]_[id_number (padded to 2)]_[id_name].png
 ```
 
 They will look something like this:

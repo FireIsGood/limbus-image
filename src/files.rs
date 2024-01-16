@@ -42,7 +42,13 @@ fn generate_ids(
         };
 
         // Actual image stuff
-        println!("Creating {} id #{}: {}", &sinner.name, id_index, &id.name);
+        println!(
+            "Creating ({:02}) {} id #{:02}: {}",
+            sinner_index + 1,
+            &sinner.name,
+            id_index + 1,
+            &id.name
+        );
 
         // Create the image, returning any errors
         crate::images::create_image(
@@ -106,7 +112,7 @@ fn output_sinner_id(
 ) -> String {
     // Outputs are scoped as `output/id/*`
     format!(
-        "{}id/{}_{}_{}_{}",
+        "{}id/{:02}_{}_{:02}_{}",
         output_folder(config),
         sinner_index + 1,
         sinner.path,
