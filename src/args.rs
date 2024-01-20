@@ -11,8 +11,8 @@ pub struct Cli {
 
 /// Get the config given a file path.
 ///
-/// Bubbles errors through anyhow.
-pub fn get_config() -> anyhow::Result<Config> {
+/// Bubbles errors through color_eyre.
+pub fn get_config() -> color_eyre::Result<Config> {
     // Get cli args
     let cli = Cli::parse();
     let config_path = PathBuf::from(cli.config.unwrap_or_else(|| "./config.toml".into()));

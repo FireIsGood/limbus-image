@@ -5,7 +5,7 @@ use crate::config::{Config, Sinner};
 ///
 /// Images are only created if they do not already exist in the output directory.
 /// Errors are bubbled up through a result. Returns the number generated.
-pub fn iterate_sinners(config: &Config) -> anyhow::Result<i32> {
+pub fn iterate_sinners(config: &Config) -> color_eyre::Result<i32> {
     let mut sinners_generated = 0;
     let sinner_list = &config.data.sinner;
 
@@ -31,7 +31,7 @@ fn generate_ids(
     input_image_folder: String,
     config: &Config,
     sinners_generated: &mut i32,
-) -> anyhow::Result<()> {
+) -> color_eyre::Result<()> {
     for (id_index, id) in sinner.id.iter().enumerate() {
         let input_id_image = input_sinner_id(&input_image_folder, id);
         let output_id_image = output_sinner_id(config, sinner, sinner_index, id, id_index);

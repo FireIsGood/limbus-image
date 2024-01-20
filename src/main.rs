@@ -10,7 +10,8 @@ mod images;
 use crate::args::get_config;
 use crate::files::iterate_sinners;
 
-fn main() -> anyhow::Result<()> {
+fn main() -> color_eyre::Result<()> {
+    color_eyre::install()?;
     println!("Generating images...");
     let config_file = get_config()?;
 

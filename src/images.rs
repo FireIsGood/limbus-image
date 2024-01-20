@@ -26,7 +26,7 @@ pub fn create_image(
     rarity: u8,
     identity: &str,
     name: &str,
-) -> anyhow::Result<()> {
+) -> color_eyre::Result<()> {
     // Open sinner image and set to the image size
     let mut sinner_portrait = image::open(input_image_path)?;
     sinner_portrait = resize_image(&sinner_portrait);

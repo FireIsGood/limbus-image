@@ -12,8 +12,8 @@ exclude = ["test/*"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-anyhow = "1.0.79"
 clap = { version = "4.4.13", features = ["derive"] }
+color-eyre = "0.6.2"
 image = "0.24.7"
 imageproc = "0.23.0"
 rusttype = "0.9.3"
