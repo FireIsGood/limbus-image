@@ -29,6 +29,11 @@ const TEXT_COLOR: image::Rgba<u8> = image::Rgba::<u8>([255, 217, 0, 255]);
 /// to add shadows natively, so this is just another layer of text slightly offset
 const SHADOW_COLOR: image::Rgba<u8> = image::Rgba::<u8>([30, 30, 30, 255]);
 
+/// Wrapped text width
+///
+/// The number of characters before wrapping text in the image
+const WRAPPED_WIDTH: u32 = 15;
+
 /// Create an image of the sinner
 ///
 /// Takes the image
@@ -46,10 +51,11 @@ pub fn create_image(
         .suggestion(format!("Create the sinner image `{}`", input_image_path))?;
     sinner_portrait = resize_image(&sinner_portrait);
 
-    // Add the text shadow overlay
-    let wrapped_width: u32 = 15;
-    let line_count = i32::try_from(textwrap::wrap(identity, wrapped_width as usize).len())
+    // Calculate line count from character width
+    let line_count = i32::try_from(textwrap::wrap(identity, WRAPPED_WIDTH as usize).len())
         .expect("Line count within i32 range");
+
+    // Add the text shadow overlay
     let overlay_file = format!("{}{}", overlay_path, line_count_to_overlay(line_count));
     let overlay = image::open(&overlay_file)
         .wrap_err(ImageError::TextShadowNotFound(overlay_file.clone().into()))
@@ -77,7 +83,7 @@ pub fn create_image(
     let shadow_offset = 5;
     write_text(
         identity,
-        wrapped_width,
+        WRAPPED_WIDTH,
         SHADOW_COLOR,
         &mut sinner_portrait,
         left_offset_top + shadow_offset,
@@ -85,7 +91,7 @@ pub fn create_image(
     );
     write_text(
         name,
-        wrapped_width,
+        WRAPPED_WIDTH,
         SHADOW_COLOR,
         &mut sinner_portrait,
         left_offset_bottom + shadow_offset,
@@ -95,7 +101,7 @@ pub fn create_image(
     // Actual text
     write_text(
         identity,
-        wrapped_width,
+        WRAPPED_WIDTH,
         TEXT_COLOR,
         &mut sinner_portrait,
         left_offset_top,
@@ -103,7 +109,7 @@ pub fn create_image(
     );
     write_text(
         name,
-        wrapped_width,
+        WRAPPED_WIDTH,
         TEXT_COLOR,
         &mut sinner_portrait,
         left_offset_bottom,
