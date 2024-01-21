@@ -19,6 +19,7 @@ imageproc = "0.23.0"
 rusttype = "0.9.3"
 serde = { version = "1.0.195", features = ["derive"] }
 textwrap = "0.16.0"
+thiserror = "1.0.56"
 toml = "0.8.8"
 
 [lints.rust]

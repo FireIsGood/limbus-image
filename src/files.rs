@@ -58,12 +58,7 @@ fn generate_ids(
             id.rarity,
             &id.name,
             &sinner.name,
-        )
-        .map_err(|e| {
-            eprintln!("\nThe image at {input_id_image} was not found.");
-            eprintln!("Check if the file exists!\n");
-            e
-        })?;
+        )?;
 
         *sinners_generated += 1;
     }
