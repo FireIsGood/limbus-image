@@ -31,6 +31,5 @@ nursery = "deny"
 unwrap_used = "deny"
 
 [profile.release]
-lto = true
 panic = "abort"
 strip = "symbols"
