@@ -32,7 +32,7 @@ pub fn create_image(
     sinner_portrait = resize_image(&sinner_portrait);
 
     // Add the text shadow overlay
-    let wrapped_width: i32 = 15;
+    let wrapped_width: u32 = 15;
     let line_count = i32::try_from(textwrap::wrap(identity, wrapped_width as usize).len())
         .expect("Line count within i32 range");
     let overlay_file = format!("{}{}", overlay_path, line_count_to_overlay(line_count));
@@ -124,7 +124,7 @@ fn rarity_to_overlay(rarity: u8) -> String {
 /// Writes wrapped text on to the image
 fn write_text(
     text: &str,
-    wrapped_width: i32,
+    wrapped_width: u32,
     color: image::Rgba<u8>,
     img: &mut image::DynamicImage,
     x_offset: i32,
@@ -133,6 +133,8 @@ fn write_text(
     let x = x_offset;
     let mut y = y_offset;
     let font_size: f32 = 50.0;
+    // Line height is not going out of range, but if it does just use the saturated value
+    #[allow(clippy::cast_possible_truncation)]
     let line_height: i32 = (font_size * 1.5).round() as i32;
 
     // Load font data

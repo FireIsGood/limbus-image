@@ -15,7 +15,7 @@ pub fn iterate_sinners(config: &Config) -> color_eyre::Result<i32> {
         generate_ids(
             sinner,
             index,
-            input_image_folder,
+            &input_image_folder,
             config,
             &mut sinners_generated,
         )?;
@@ -28,12 +28,12 @@ pub fn iterate_sinners(config: &Config) -> color_eyre::Result<i32> {
 fn generate_ids(
     sinner: &Sinner,
     sinner_index: usize,
-    input_image_folder: String,
+    input_image_folder: &str,
     config: &Config,
     sinners_generated: &mut i32,
 ) -> color_eyre::Result<()> {
     for (id_index, id) in sinner.id.iter().enumerate() {
-        let input_id_image = input_sinner_id(&input_image_folder, id);
+        let input_id_image = input_sinner_id(input_image_folder, id);
         let output_id_image = output_sinner_id(config, sinner, sinner_index, id, id_index);
 
         let sinner_already_exists = std::path::Path::new(&output_id_image).exists();
@@ -90,7 +90,7 @@ fn sinner_folder(config: &Config, sinner: &Sinner) -> String {
 }
 
 /// Path to the sinner's ID input image
-fn input_sinner_id(input_image_folder: &String, id: &crate::config::Identity) -> String {
+fn input_sinner_id(input_image_folder: &str, id: &crate::config::Identity) -> String {
     // Inputs are scoped as `input/sinners/[sinner]/[id]/*`
     format!("{}/id/{}", &input_image_folder, id.image)
 }

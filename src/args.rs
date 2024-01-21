@@ -11,7 +11,7 @@ pub struct Cli {
 
 /// Get the config given a file path.
 ///
-/// Bubbles errors through color_eyre.
+/// Bubbles errors through `color_eyre`.
 pub fn get_config() -> color_eyre::Result<Config> {
     // Get cli args
     let cli = Cli::parse();

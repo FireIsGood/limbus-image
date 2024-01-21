@@ -20,3 +20,12 @@ rusttype = "0.9.3"
 serde = { version = "1.0.195", features = ["derive"] }
 textwrap = "0.16.0"
 toml = "0.8.8"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+enum_glob_use = "deny"
+pedantic = "deny"
+nursery = "deny"
+unwrap_used = "deny"
