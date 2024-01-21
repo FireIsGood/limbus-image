@@ -1,4 +1,6 @@
 //! File accessing and general driver stuff
+use color_eyre::eyre::Context;
+
 use crate::config::{Config, Sinner};
 
 /// Iterates each sinner and each identity for all the work
@@ -18,7 +20,8 @@ pub fn iterate_sinners(config: &Config) -> color_eyre::Result<i32> {
             &input_image_folder,
             config,
             &mut sinners_generated,
-        )?;
+        )
+        .wrap_err(format!("Sinner `{}` could not be generated", sinner.name))?;
     }
 
     Ok(sinners_generated)
@@ -58,7 +61,8 @@ fn generate_ids(
             id.rarity,
             &id.name,
             &sinner.name,
-        )?;
+        )
+        .wrap_err(format!("Identity `{}` could not be generated", id.name))?;
 
         *sinners_generated += 1;
     }

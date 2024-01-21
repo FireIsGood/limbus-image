@@ -1,5 +1,6 @@
 //! Image generation and overlaying
 
+use color_eyre::{eyre::Context, Section};
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -41,7 +42,8 @@ pub fn create_image(
 ) -> color_eyre::Result<()> {
     // Open sinner image and set to the image size
     let mut sinner_portrait = image::open(input_image_path)
-        .map_err(|_| ImageError::IdentityNotFound(input_image_path.into()))?;
+        .wrap_err(ImageError::IdentityNotFound(input_image_path.into()))
+        .suggestion(format!("Create the sinner image `{}`", input_image_path))?;
     sinner_portrait = resize_image(&sinner_portrait);
 
     // Add the text shadow overlay
@@ -50,14 +52,18 @@ pub fn create_image(
         .expect("Line count within i32 range");
     let overlay_file = format!("{}{}", overlay_path, line_count_to_overlay(line_count));
     let overlay = image::open(&overlay_file)
-        .map_err(|_| ImageError::TextShadowNotFound(overlay_file.into()))?;
+        .wrap_err(ImageError::TextShadowNotFound(overlay_file.clone().into()))
+        .suggestion(format!("Create the shadow image `{}`", overlay_file))?;
     let overlay = resize_image(&overlay);
     image::imageops::overlay(&mut sinner_portrait, &overlay, 0, 0);
 
     // Add the rarity overlay
     let rarity_overlay_file = format!("{}{}", overlay_path, rarity_to_overlay(rarity));
     let rarity_overlay = image::open(&rarity_overlay_file)
-        .map_err(|_| ImageError::RarityNotFound(rarity_overlay_file.into()))?;
+        .wrap_err(ImageError::RarityNotFound(
+            rarity_overlay_file.clone().into(),
+        ))
+        .suggestion(format!("Create the rarity image `{}`", rarity_overlay_file))?;
     let rarity_overlay = resize_image(&rarity_overlay);
     image::imageops::overlay(&mut sinner_portrait, &rarity_overlay, 0, 0);
 
