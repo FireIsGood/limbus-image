@@ -19,18 +19,18 @@ file as follows:
 ```text
 /
 ├── asset/
-│   ├── gradient_small.png               # Overlay for 1 line of upper text
-│   ├── gradient_large.png               # Overlay for 2 lines of upper text
-│   ├── 0.png                            # 0 id border
-│   ├── 00.png                           # 00 id border
-│   └── 000.png                          # 000 id border
+│   ├── gradient_small.png     # Overlay for 1 line of upper text
+│   ├── gradient_large.png     # Overlay for 2 lines of upper text
+│   ├── 0.png                  # 0 id border
+│   ├── 00.png                 # 00 id border
+│   └── 000.png                # 000 id border
 ├── input/
 │   └── [sinner_name]/
 │       └── id/
-│           └── [id_name].png            # Identity name matching the config
+│           └── [id_name].png  # Identity name matching the config
 ├── output/
-│   └── id/
-│       └── [sinner_name]_[id_name].png  # Output images
+│   └── id/                    # Identity images
+│       └── [sinner_number]_[sinner_name]_[id_number]_[id_name].png
 └── config.toml
 ```
 
