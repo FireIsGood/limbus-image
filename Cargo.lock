@@ -485,7 +485,7 @@ checksum = "302d7ab3130588088d277783b1e2d2e10c9e9e4a16dd9050e6ec93fb3e7048f4"
 
 [[package]]
 name = "limbus-image"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "clap",
  "color-eyre",
