@@ -9,6 +9,7 @@ id = [
     { name = "Molar Office Fixer", rarity = 2, image = "molar.png" },
     { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
     { name = "Pequod First Mate", rarity = 2, image = "pequod.png" },
+    { name = "Dieci Association", rarity = 2, image = "dieci.png" },
 ]
 
 [[sinner]]
@@ -73,6 +74,7 @@ id = [
     { name = "K. Corp Staff", rarity = 3, image = "k_corp.png" },
     { name = "W. Corp Cl. Agent", rarity = 2, image = "w_corp.png" },
     { name = "Hook Office", rarity = 2, image = "hook.png" },
+    { name = "Dieci Association", rarity = 3, image = "dieci.png" },
 ]
 
 [[sinner]]
