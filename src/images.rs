@@ -11,6 +11,10 @@ pub enum ImageError {
     TextShadowNotFound(String),
     #[error("Rarity image `{0}` was not found")]
     RarityNotFound(String),
+    #[error("Names must be 1-2 lines")]
+    TextTooLong,
+    #[error("Rarity `{0}` is not allowed")]
+    BadRarityLevel(u8),
 }
 
 /// Image size
@@ -55,8 +59,14 @@ pub fn create_image(
     let line_count = i32::try_from(textwrap::wrap(identity, WRAPPED_WIDTH as usize).len())
         .expect("Line count within i32 range");
 
+    // We don't support anything above 2 lines
+    if line_count < 1 && line_count > 2 {
+        return Err(ImageError::BadRarityLevel(line_count as u8))
+            .suggestion("Change the configuration file to not have that rarity.");
+    };
+
     // Add the text shadow overlay
-    let overlay_file = format!("{}{}", overlay_path, line_count_to_overlay(line_count));
+    let overlay_file = format!("{}{}", overlay_path, line_count_to_overlay(line_count)?);
     let overlay = image::open(&overlay_file)
         .wrap_err(ImageError::TextShadowNotFound(overlay_file.clone().into()))
         .suggestion(format!("Create the shadow image `{}`", overlay_file))?;
@@ -64,7 +74,7 @@ pub fn create_image(
     image::imageops::overlay(&mut sinner_portrait, &overlay, 0, 0);
 
     // Add the rarity overlay
-    let rarity_overlay_file = format!("{}{}", overlay_path, rarity_to_overlay(rarity));
+    let rarity_overlay_file = format!("{}{}", overlay_path, rarity_to_overlay(rarity)?);
     let rarity_overlay = image::open(&rarity_overlay_file)
         .wrap_err(ImageError::RarityNotFound(
             rarity_overlay_file.clone().into(),
@@ -128,24 +138,23 @@ pub fn create_image(
 }
 
 /// Converts line count to a string of the gradient asset to overlay
-fn line_count_to_overlay(lines: i32) -> String {
+fn line_count_to_overlay(lines: i32) -> color_eyre::Result<String> {
     match lines {
-        1 => "gradient_small.png",
-        2 => "gradient_large.png",
-        _ => panic!("The name wrapped to 3 lines which is not supported. Try shortening the name!"),
+        1 => Ok("gradient_small.png".to_owned()),
+        2 => Ok("gradient_large.png".to_owned()),
+        _ => Err(ImageError::TextTooLong)
+            .suggestion("Reduce the number of words or use acronyms in the name."),
     }
-    .into()
 }
 
 /// Converts rarity to a string of the border asset to overlay
-fn rarity_to_overlay(rarity: u8) -> String {
+fn rarity_to_overlay(rarity: u8) -> color_eyre::Result<String> {
     match rarity {
-        1 => "0.png",
-        2 => "00.png",
-        3 => "000.png",
-        _ => panic!("Rarity can only be 1 to 3!"),
+        1 => Ok("0.png".to_owned()),
+        2 => Ok("00.png".to_owned()),
+        3 => Ok("000.png".to_owned()),
+        _ => panic!("Somehow got a rarity out of range!"),
     }
-    .into()
 }
 
 /// Writes wrapped text on to the image
