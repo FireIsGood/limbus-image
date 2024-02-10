@@ -101,6 +101,7 @@ id = [
     { name = "Liu Association", rarity = 3, image = "liu.png" },
     { name = "L. Corp EGO:: Sloshing", rarity = 2, image = "sloshing.png" },
     { name = "Molar Boatworks Fixer", rarity = 3, image = "molar_boatworks.png" },
+    { name = "Pequod Captain", rarity = 3, image = "pequod.png" },
 ]
 
 [[sinner]]
