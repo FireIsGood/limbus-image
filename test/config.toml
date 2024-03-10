@@ -50,6 +50,7 @@ id = [
     { name = "R.B. Chef de Cuisine", rarity = 3, image = "rb_chef.png" },
     { name = "LCCB A. Manager", rarity = 2, image = "lccb.png" },
     { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
+    { name = "Liu Association", rarity = 2, image = "liu.png" },
 ]
 
 [[sinner]]
@@ -118,6 +119,7 @@ id = [
     { name = "Rosespanner Workshop", rarity = 3, image = "rosespanner.png" },
     { name = "Zwei Association", rarity = 2, image = "zwei.png" },
     { name = "Dieci Association", rarity = 3, image = "dieci.png" },
+    { name = "Liu Association", rarity = 3, image = "liu.png" },
 ]
 
 [[sinner]]
