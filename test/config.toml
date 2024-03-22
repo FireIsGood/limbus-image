@@ -92,6 +92,7 @@ id = [
     { name = "L. Corp EGO:: Sunshower", rarity = 3, image = "sunshower.png" },
     { name = "Seven Association", rarity = 2, image = "seven.png" },
     { name = "The Pequod Harpooner", rarity = 3, image = "pequod.png" },
+    { name = "Oufi Association", rarity = 3, image = "oufi.png" },
 ]
 
 [[sinner]]
