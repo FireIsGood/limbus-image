@@ -65,6 +65,7 @@ id = [
     { name = "The Middle Little Brother", rarity = 2, image = "middle.png" },
     { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
     { name = "Blade Lineage Mentor", rarity = 3, image = "blade_lineage.png" },
+    { name = "Dead Rabbits Boss", rarity = 2, image = "dead_rabbits.png" },
 ]
 
 [[sinner]]
@@ -148,6 +149,7 @@ id = [
     { name = "Molar Office Fixer", rarity = 3, image = "molar.png" },
     { name = "Cinq Association", rarity = 2, image = "cinq.png" },
     { name = "L. Corp EGO:: Magic Bullet", rarity = 3, image = "magic_bullet.png" },
+    { name = "Wurthing Heights Butler", rarity = 3, image = "wurthing_heights.png" },
 ]
 
 [[sinner]]
