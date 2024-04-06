@@ -24,6 +24,7 @@ id = [
     { name = "Seven Association", rarity = 3, image = "seven.png" },
     { name = "L. Corp EGO:: Regret", rarity = 3, image = "lob_ego_regret.png" },
     { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
+    { name = "Wurthing Heights Butler", rarity = 2, image = "wurthing_heights.png" },
 ]
 
 [[sinner]]
@@ -164,4 +165,5 @@ id = [
     { name = "Zwei Association", rarity = 3, image = "zwei.png" },
     { name = "Twinhook Pirates F. Mate", rarity = 3, image = "twinhook.png" },
     { name = "Kurokumo Clan Captain", rarity = 2, image = "kurokumo.png" },
+    { name = "Edgar Family Heir", rarity = 3, image = "edgar_heir.png" },
 ]
