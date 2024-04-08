@@ -24,7 +24,7 @@ id = [
     { name = "Seven Association", rarity = 3, image = "seven.png" },
     { name = "L. Corp EGO:: Regret", rarity = 3, image = "lob_ego_regret.png" },
     { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
-    { name = "Wurthing Heights Butler", rarity = 2, image = "wurthing_heights.png" },
+    { name = "Wuthering Heights Butler", rarity = 2, image = "wuthering_heights.png" },
 ]
 
 [[sinner]]
@@ -150,7 +150,7 @@ id = [
     { name = "Molar Office Fixer", rarity = 3, image = "molar.png" },
     { name = "Cinq Association", rarity = 2, image = "cinq.png" },
     { name = "L. Corp EGO:: Magic Bullet", rarity = 3, image = "magic_bullet.png" },
-    { name = "Wurthing Heights Butler", rarity = 3, image = "wurthing_heights.png" },
+    { name = "Wuthering Heights Butler", rarity = 3, image = "wuthering_heights.png" },
 ]
 
 [[sinner]]
