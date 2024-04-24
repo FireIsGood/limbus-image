@@ -52,6 +52,7 @@ id = [
     { name = "LCCB A. Manager", rarity = 2, image = "lccb.png" },
     { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
     { name = "Liu Association", rarity = 2, image = "liu.png" },
+    { name = "Edgar Family Butler", rarity = 3, image = "edgar.png" },
 ]
 
 [[sinner]]
@@ -109,6 +110,7 @@ id = [
     { name = "L. Corp EGO:: Sloshing", rarity = 2, image = "sloshing.png" },
     { name = "Molar Boatworks Fixer", rarity = 3, image = "molar_boatworks.png" },
     { name = "Pequod Captain", rarity = 3, image = "pequod.png" },
+    { name = "Edgar Family Butler", rarity = 2, image = "edgar.png" },
 ]
 
 [[sinner]]
