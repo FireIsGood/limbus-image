@@ -139,6 +139,7 @@ id = [
     { name = "L. Corp EGO:: Red Sheet", rarity = 2, image = "red_sheet.png" },
     { name = "Molar Boatworks Fixer", rarity = 2, image = "molar_boatworks.png" },
     { name = "Cinq Association", rarity = 3, image = "cinq.png" },
+    { name = "Dawn Office Fixer", rarity = 3, image = "dawn_office.png" },
 ]
 
 [[sinner]]
