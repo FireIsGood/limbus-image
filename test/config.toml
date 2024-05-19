@@ -10,6 +10,7 @@ id = [
     { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
     { name = "Pequod First Mate", rarity = 2, image = "pequod.png" },
     { name = "Dieci Association", rarity = 2, image = "dieci.png" },
+    { name = "The Ring Pointillist", rarity = 3, image = "ring.png" },
 ]
 
 [[sinner]]
@@ -154,6 +155,7 @@ id = [
     { name = "Cinq Association", rarity = 2, image = "cinq.png" },
     { name = "L. Corp EGO:: Magic Bullet", rarity = 3, image = "magic_bullet.png" },
     { name = "Wuthering Heights Butler", rarity = 3, image = "wuthering_heights.png" },
+    { name = "The Ring Pointillist", rarity = 2, image = "ring.png" },
 ]
 
 [[sinner]]
