@@ -25,9 +25,9 @@ unsafe_code = "forbid"
 
 [lints.clippy]
 enum_glob_use = "deny"
-pedantic = "deny"
-nursery = "deny"
-unwrap_used = "deny"
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -2 }
+unwrap_used = { level = "deny", priority = -3 }
 
 [profile.release]
 panic = "abort"

@@ -14,7 +14,7 @@ pub enum ImageError {
     #[error("Names must be 1-2 lines")]
     TextTooLong,
     #[error("Rarity `{0}` is not allowed")]
-    BadRarityLevel(u8),
+    BadRarityLevel(i32),
 }
 
 /// Image size
@@ -52,7 +52,7 @@ pub fn create_image(
     // Open sinner image and set to the image size
     let mut sinner_portrait = image::open(input_image_path)
         .wrap_err(ImageError::IdentityNotFound(input_image_path.into()))
-        .suggestion(format!("Create the sinner image `{}`", input_image_path))?;
+        .suggestion(format!("Create the sinner image `{input_image_path}`"))?;
     sinner_portrait = resize_image(&sinner_portrait);
 
     // Calculate line count from character width
@@ -60,26 +60,24 @@ pub fn create_image(
         .expect("Line count within i32 range");
 
     // We don't support anything above 2 lines
-    if line_count < 1 && line_count > 2 {
-        return Err(ImageError::BadRarityLevel(line_count as u8))
+    if !(1..=2).contains(&line_count) {
+        return Err(ImageError::BadRarityLevel(line_count))
             .suggestion("Change the configuration file to not have that rarity.");
     };
 
     // Add the text shadow overlay
     let overlay_file = format!("{}{}", overlay_path, line_count_to_overlay(line_count)?);
     let overlay = image::open(&overlay_file)
-        .wrap_err(ImageError::TextShadowNotFound(overlay_file.clone().into()))
-        .suggestion(format!("Create the shadow image `{}`", overlay_file))?;
+        .wrap_err(ImageError::TextShadowNotFound(overlay_file.clone()))
+        .suggestion(format!("Create the shadow image `{overlay_file}`"))?;
     let overlay = resize_image(&overlay);
     image::imageops::overlay(&mut sinner_portrait, &overlay, 0, 0);
 
     // Add the rarity overlay
-    let rarity_overlay_file = format!("{}{}", overlay_path, rarity_to_overlay(rarity)?);
+    let rarity_overlay_file = format!("{}{}", overlay_path, rarity_to_overlay(rarity));
     let rarity_overlay = image::open(&rarity_overlay_file)
-        .wrap_err(ImageError::RarityNotFound(
-            rarity_overlay_file.clone().into(),
-        ))
-        .suggestion(format!("Create the rarity image `{}`", rarity_overlay_file))?;
+        .wrap_err(ImageError::RarityNotFound(rarity_overlay_file.clone()))
+        .suggestion(format!("Create the rarity image `{rarity_overlay_file}`"))?;
     let rarity_overlay = resize_image(&rarity_overlay);
     image::imageops::overlay(&mut sinner_portrait, &rarity_overlay, 0, 0);
 
@@ -148,11 +146,11 @@ fn line_count_to_overlay(lines: i32) -> color_eyre::Result<String> {
 }
 
 /// Converts rarity to a string of the border asset to overlay
-fn rarity_to_overlay(rarity: u8) -> color_eyre::Result<String> {
+fn rarity_to_overlay(rarity: u8) -> std::string::String {
     match rarity {
-        1 => Ok("0.png".to_owned()),
-        2 => Ok("00.png".to_owned()),
-        3 => Ok("000.png".to_owned()),
+        1 => "0.png".to_owned(),
+        2 => "00.png".to_owned(),
+        3 => "000.png".to_owned(),
         _ => panic!("Somehow got a rarity out of range!"),
     }
 }
