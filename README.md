@@ -69,7 +69,7 @@ If you need to install Cargo, look up a guide on your favorite search engine.
 Once it's installed, just run the installation command:
 
 ```bash
-cargo install
+cargo install limbus-image
 ```
 
 This is basically the same as compiling from the source, but more convenient.
