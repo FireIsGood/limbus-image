@@ -90,7 +90,7 @@ fn sinner_folder(config: &Config, sinner: &Sinner) -> String {
 
 /// Path to the sinner's ID input image
 fn input_sinner_id(input_image_folder: &str, id: &crate::config::Identity) -> String {
-    // Inputs are scoped as `input/sinners/[sinner]/[id]/*`
+    // Inputs are scoped as `input/[sinner]/[id]/*`
     format!("{}/id/{}", &input_image_folder, id.image)
 }
 
