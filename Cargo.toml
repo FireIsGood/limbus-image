@@ -1,6 +1,6 @@
 [package]
 name = "limbus-image"
-version = "0.4.1"
+version = "0.4.2"
 edition = "2021"
 description = "CLI Limbus company image generator"
 readme = "README.md"
