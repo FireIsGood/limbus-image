@@ -54,6 +54,7 @@ id = [
     { name = "W. Corp Cl. Agent", rarity = 3, image = "w_corp.png" },
     { name = "Liu Association", rarity = 2, image = "liu.png" },
     { name = "Edgar Family Butler", rarity = 3, image = "edgar.png" },
+    { name = "District 20 Yurodivy", rarity = 2, image = "yurodivy.png" },
 ]
 
 [[sinner]]
@@ -83,6 +84,7 @@ id = [
     { name = "W. Corp Cl. Agent", rarity = 2, image = "w_corp.png" },
     { name = "Hook Office", rarity = 2, image = "hook.png" },
     { name = "Dieci Association", rarity = 3, image = "dieci.png" },
+    { name = "District 20 Yurodivy", rarity = 3, image = "yurodivy.png" },
 ]
 
 [[sinner]]
