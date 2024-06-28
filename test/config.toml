@@ -40,6 +40,7 @@ id = [
     { name = "The Middle Little Sister", rarity = 3, image = "middle.png" },
     { name = "L. Corp EGO:: Lantern", rarity = 2, image = "lantern.png" },
     { name = "Blade Lineage Salsu", rarity = 2, image = "blade_lineage.png" },
+    { name = "T. Corp Class 3 Staff", rarity = 3, image = "t_corp.png" },
 ]
 
 [[sinner]]
@@ -128,6 +129,7 @@ id = [
     { name = "Zwei Association", rarity = 2, image = "zwei.png" },
     { name = "Dieci Association", rarity = 3, image = "dieci.png" },
     { name = "Liu Association", rarity = 3, image = "liu.png" },
+    { name = "T. Corp Class 2 Staff", rarity = 2, image = "t_corp.png" },
 ]
 
 [[sinner]]
