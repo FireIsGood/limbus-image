@@ -161,6 +161,7 @@ id = [
     { name = "L. Corp EGO:: Magic Bullet", rarity = 3, image = "magic_bullet.png" },
     { name = "Wuthering Heights Butler", rarity = 3, image = "wuthering_heights.png" },
     { name = "The Ring Pointillist", rarity = 2, image = "ring.png" },
+    { name = "W. Corp Cl. Captain", rarity = 3, image = "w_corp.png" },
 ]
 
 [[sinner]]
