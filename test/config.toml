@@ -11,6 +11,7 @@ id = [
     { name = "Pequod First Mate", rarity = 2, image = "pequod.png" },
     { name = "Dieci Association", rarity = 2, image = "dieci.png" },
     { name = "The Ring Pointillist", rarity = 3, image = "ring.png" },
+    { name = "L. Corp EGO:: Solemn Lament", rarity = 3, image = "lob_ego_lament.png" },
 ]
 
 [[sinner]]
@@ -45,7 +46,7 @@ id = [
 ]
 
 [[sinner]]
-name = "Ryoshu"
+name = "Rloyoshu"
 path = "ryoshu"
 id = [
     { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
@@ -57,6 +58,7 @@ id = [
     { name = "Liu Association", rarity = 2, image = "liu.png" },
     { name = "Edgar Family Butler", rarity = 3, image = "edgar.png" },
     { name = "District 20 Yurodivy", rarity = 2, image = "yurodivy.png" },
+    { name = "L. Corp EGO:: Red Eyes", rarity = 3, image = "lob_ego_red_eyes.png" },
 ]
 
 [[sinner]]
