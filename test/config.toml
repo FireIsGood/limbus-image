@@ -26,6 +26,7 @@ id = [
     { name = "L. Corp EGO:: Regret", rarity = 3, image = "lob_ego_regret.png" },
     { name = "Blade Lineage Salsu", rarity = 3, image = "blade_lineage.png" },
     { name = "Wuthering Heights Butler", rarity = 2, image = "wuthering_heights.png" },
+    { name = "MultiCrack Office Rep", rarity = 3, image = "multicrack.png" },
 ]
 
 [[sinner]]
@@ -101,6 +102,8 @@ id = [
     { name = "Seven Association", rarity = 2, image = "seven.png" },
     { name = "The Pequod Harpooner", rarity = 3, image = "pequod.png" },
     { name = "Oufi Association", rarity = 3, image = "oufi.png" },
+    { name = "MultiCrack Office", rarity = 2, image = "multicrack.png" },
+    { name = "Wild Hunt", rarity = 3, image = "wild_hunt.png" },
 ]
 
 [[sinner]]
