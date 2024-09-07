@@ -46,7 +46,7 @@ id = [
 ]
 
 [[sinner]]
-name = "Rloyoshu"
+name = "Ryoshu"
 path = "ryoshu"
 id = [
     { name = "LCB Sinner", rarity = 1, image = "lcb.png" },
